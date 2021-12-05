@@ -10,9 +10,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <div class="main">
-      <div class="emoji mb-6">💣🤯💥</div>
-      <button class="button">Boom?</button>
-    </div>
+      <form method="post" action="{{ url('/checkout') }}" class="needs-validation" novalidate>
+    {{csrf_field() }}
+        
+<input type="text" name="name" class="form-control" id="firstName" 
+placeholder="name" value="" required
+               style="border: 1px solid black !important;">
+
+<input type="email" name="email" class="form-control" id="email" 
+ placeholder="you@example.com"
+           required="required" style="border: 1px solid black !important;">
+
+<input type="text" name="address" class="form-control" id="address" placeholder="1234 
+  Main St" required
+           style="border: 1px solid black !important;">
+    <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: 
+   black;">Place Order</button>
+  </form>
   </body>
 </html>
